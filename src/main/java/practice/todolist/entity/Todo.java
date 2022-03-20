@@ -1,6 +1,7 @@
-package com.practicereactor;
+package practice.todolist.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -11,7 +12,8 @@ import java.util.Date;
 @Document
 @Data
 @NoArgsConstructor
-public class Todos {
+@AllArgsConstructor
+public class Todo {
     @Id
     private String id;
 
@@ -19,9 +21,4 @@ public class Todos {
 
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date schedule;
-
-    public Todos(String task, Date schedule) {
-        this.task = task;
-        this.schedule = schedule;
-    }
 }
